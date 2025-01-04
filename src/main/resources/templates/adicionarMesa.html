@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/stylee.css"> 
+    <title>Adicionar Mesa</title>
+</head>
+<body>
+    <h1>Adicionar Mesa</h1>
+    <form action="/mesas/adicionar" method="post">
+        <label for="id">ID da Mesa:</label>
+        <input type="number" id="id" name="id" required><br><br>
+
+        <input type="hidden" id="ocupada" name="ocupada" value="true"><br><br>
+
+
+        <button type="submit">Adicionar Mesa</button>
+    </form>
+      <a href="/">
+        <button type="button">Voltar ao início</button>
+    </a>
+</body>
+</html>

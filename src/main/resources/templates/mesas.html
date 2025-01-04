@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylee.css"> 
+    <title>Mesas</title>
+</head>
+<body>
+    <h1>Mesas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mesa</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mesa : ${mesas}">
+                <td th:text="${mesa.id}"></td>
+                <td th:text="${mesa.ocupada ? 'Ocupada' : 'Disponível'}"></td>
+                <td th:text="${mesa.total}"></td>
+                <td>
+         
+                   <form th:if="${mesa.ocupada}" th:action="@{'/mesas/finalizar/' + ${mesa.id}}" method="post" style="display: inline;">
+                   <button type="submit">Finalizar</button>
+                   </form>
+
+                    <a th:if="${mesa.ocupada}" th:href="@{'/mesas/adicionarProduto/' + ${mesa.id}}">
+                        <button>Adicionar Produto</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/mesas/adicionar" class="btn btn-primary">Adicionar Nova Mesa</a>
+      <a href="/">
+        <button type="button">Voltar ao início</button>
+    </a>
+</body>
+</html>

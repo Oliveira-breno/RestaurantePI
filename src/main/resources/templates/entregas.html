@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="/stylee.css"> 
+    <title>Entregas</title>
+</head>
+<body>
+    <h1>Lista de Entregas</h1>
+
+   
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Endereço</th>
+                <th>Total</th>
+                <th>Produtos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entrega : ${entregas}">
+                <td th:text="${entrega.id}"></td>
+                <td th:text="${entrega.nomeCliente}"></td>
+                <td th:text="${entrega.endereco}"></td>
+                <td th:text="${entrega.total}"></td>
+                <td>
+                    <ul>
+                        <li th:each="produto : ${entrega.produtos}" th:text="${produto.nome}"></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+     <a href="/entregas/adicionar">
+        <button type="button">Adicionar Entrega</button>
+    </a>
+    
+     <a href="/">
+        <button type="button">Voltar ao início</button>
+    </a>
+</body>
+</html>

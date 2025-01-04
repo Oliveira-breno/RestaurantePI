@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/stylee.css"> 
+    <title>Adicionar Entrega</title>
+</head>
+<body>
+    <h1>Adicionar Entrega</h1>
+    <form action="/entregas/adicionar" method="post">
+        <label for="nomeCliente">Nome do Cliente:</label>
+        <input type="text" id="nomeCliente" name="nomeCliente" required><br><br>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required><br><br>
+
+        <label for="produtoIds">Produtos:</label>
+        <select id="produtoIds" name="produtoIds" multiple required>
+            <option th:each="produto : ${produtos}" th:value="${produto.id}" th:text="${produto.nome}"></option>
+        </select><br><br>
+
+        <button type="submit">Adicionar</button>
+    </form>
+      <a href="/">
+        <button type="button">Voltar ao início</button>
+    </a>
+</body>
+</html>

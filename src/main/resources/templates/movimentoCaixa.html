@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylee.css"> 
+    <title>Movimento de Caixa</title>
+</head>
+<body>
+    <h1>Movimento de Caixa</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="movimento : ${movimentos}">
+                <td th:text="${movimento.data}"></td>
+                <td th:text="${movimento.descricao}"></td>
+                <td th:text="${movimento.tipo}"></td>
+                <td th:text="${movimento.valor}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

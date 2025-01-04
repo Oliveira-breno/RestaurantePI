@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="/stylee.css"> 
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Categoria</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop para exibir os produtos -->
+            <tr th:each="produto : ${produtos}">
+                <td th:text="${produto.id}"></td>
+                <td th:text="${produto.nome}"></td>
+                <td th:text="${produto.valor}"></td>
+                <td th:text="${produto.categoria}"></td>               
+            </tr>
+        </tbody>
+    </table>
+    <a href="/produtos/adicionar" class="btn btn-primary">Adicionar Produto</a>
+    
+      <a href="/">
+        <button type="button">Voltar ao início</button>
+    </a>
+</body>
+</html>
